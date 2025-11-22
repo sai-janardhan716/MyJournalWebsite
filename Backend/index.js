@@ -1,11 +1,18 @@
+// Importing necessary modules
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
+require("dotenv").config();
+
+// Creating server
 const app = express();
+
+// Using middlewares
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
-require("dotenv").config();
+
+// Creating databse Connection
 const db = mysql.createConnection({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -19,6 +26,8 @@ db.connect((err) => {
         console.log("Database Connected Successfully");
     }
 });
+
+// Routings
 app.get("/", (req, res) => {
     res.send("Hi this is my sample server side message");
 });
@@ -135,6 +144,8 @@ app.get("/:id",(req,res)=>{
         return res.status(200).json(results[0]);
     });
 });
+
+// Port listening
 app.listen(5000, () => {
     console.log("Server is running at Port : 5000");
 });
