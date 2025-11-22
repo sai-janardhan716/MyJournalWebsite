@@ -29,7 +29,6 @@ loginForm.addEventListener('submit',async (e)=>{
     if(response.status == 200){
         const res = await response.json();
         localStorage.setItem('userId',res.userId);
-        alert("Login Successfull");
         window.location.href = "../FeedPage/FeedPage.html";
     }else{
         alert("Invalid email or password");
