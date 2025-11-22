@@ -14,11 +14,11 @@ MyJournal is a simple backend practice project built using Node.js, Express, and
     - Fetch posts based on the logged-in user
     - View detailed post page
     - Delete a specific post
-    - MySQL foreign key relationship between Users and Posts
 - Database
     - users table for storing login details
     - posts table for storing user posts
     - Each post belongs to a user (userId as foreign key)
+    - MySQL foreign key relationship between Users and Posts
 
 ---
 
@@ -65,9 +65,9 @@ MyJournalWebsite/
 | POST   | /registerUser         | Register new user     |
 | POST   | /loginUser            | Login & return userId |
 | POST   | /addPost              | Add a new post        |
-| GET    | /fetchPosts/:userId   | Fetch user’s posts    |
-| GET    | /getPost/:postId      | View a single post    |
-| DELETE | /deletePost/:postId   | Delete a post         |
+| GET    | /fetchPosts/:id       | Fetch user’s posts    |
+| GET    | /:id                  | View a single post    |
+| DELETE | /deletePost/:id       | Delete a post         |
 
 ---
 
