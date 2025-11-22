@@ -1,0 +1,12 @@
+body{
+    padding: 40px;
+}
+.post{
+    width: 800px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

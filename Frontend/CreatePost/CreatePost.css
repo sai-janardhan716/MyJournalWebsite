@@ -1,0 +1,14 @@
+body{
+    height: 100vh;
+}
+.postCreationForm{
+    width: 500px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid rgb(206, 206, 206);
+    padding: 20px;
+}
+.createPostHeading{
+    font-size: 25px;
+    font-weight: 400;
+}
