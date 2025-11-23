@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 require("dotenv").config();
-
+const { sendWelcomeEmail } = require("./emailService");
 // Creating server
 const app = express();
 
@@ -47,11 +47,12 @@ app.post("/registerUser", async (req, res) => {
             return res.status(500).send("Password Encryption Error");
         }
         const insertQuery = `INSERT INTO users (email, password) VALUES (?, ?)`;
-        db.query(insertQuery, [email, hashedpwd], (err2) => {
+        db.query(insertQuery, [email, hashedpwd], async (err2) => {
             if (err2) {
                 console.log(err2);
                 return res.status(500).send("Database Insert Error");
             }
+            await sendWelcomeEmail(email);
             return res.status(200).send("User Registered Successfully");
         });
     });
