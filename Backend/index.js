@@ -28,9 +28,6 @@ db.connect((err) => {
 });
 
 // Routings
-app.get("/", (req, res) => {
-    res.send("Hi this is my sample server side message");
-});
 app.post("/registerUser", async (req, res) => {
     const { email, password } = req.body;
     const checkQuery = `SELECT * FROM users WHERE email = ?`;
