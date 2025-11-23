@@ -5,7 +5,7 @@ MyJournal is a simple backend practice project built using Node.js, Express, and
 
 # Features
 - Authentication
-- User registration
+- User registration and welcome mail sending using nodemailer module
 - User login with bcrypt password hashing
 - Duplicate email validation
 - LocalStorage used for session tracking
@@ -81,6 +81,7 @@ MyJournalWebsite/
 - Handling sessions using localStorage
 - Frontend–Backend communication using Fetch API
 - Organizing a full-stack mini project
+- How to implement email sending
 
 ---
 
